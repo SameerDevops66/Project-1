@@ -1,0 +1,131 @@
+Ansible commands: 
+---------------------
+
+anisible -m ping { server names }
+
+ansible -m ping all { ping to all the servers to check the server activitie }
+
+vi install_java.yml  { to create the script here }
+
+ansible-playbook {filename} --syntax -check  { to check errors in the scripts }
+
+ansible-playbook {filename }   { to execute the playbook }
+
+ansible-vault create {filename }  { for the new file }
+
+ansible-vault view {filename}  { to view the file }
+
+ansible-vault edit {filename} { to edit the file contant }
+
+ansible-vault rekey {filename} { to change the password of the vault } 
+
+ansible-vault encrypt {filename}  { to encrypt for the exisiting playbooks }
+
+ansible-vault decrypt {filename}  { to remove encrypt for the file }
+
+ansible-playbook {filename} >> ram.log -- filename.   {to create the logs for particaluar playbooks}
+
+--------------------------------------------------------------------------------------
+
+Docker Commands:
+---------------------
+]
+docker images { to see the all the images }
+
+docker ps { to see all the power on containers }
+
+docker ps -a { to see power off container also }
+
+
+]
+
+[
+
+sudo docker login --username=sameer66devops  { Login to the docker hub account to pul the images }
+
+docker pull {image name}   { to pull the images from the dockerhub }
+
+sudo docker run -it --name Redhatserver {imagename}   { to run the container along with name of the container }
+
+sudo docker commit {imagename} {dockerhubusername}/{imagename:version}  { to convert the container into image }
+
+sudo docker push {Repository:version}    { to push to the docker hub account } 
+]
+
+[
+
+sudo docker build -t {dockerhub username/imagename:versionumber}space .    { to execute the docker file }
+
+
+]
+
+sudo docker run -it imagename:versonnumber /bin/bash { to open container which we pulled from dockerhub }
+
+[
+
+sudo docker exec -it {container id space /bin/bash }  { to open interanl exisiting container }
+
+sudo docker start -it {container id }  { to start the container which is stoped }
+
+sudo docker stop -it {containe id }  { to stop the container whcih is started }
+
+] 
+
+dokcer volume ls  { to see the list of the volumes means storages }
+
+docker volume create {volumename}  { to create new volumes }
+
+sudo docker run -it --name {containername} -vspace{volumename}:/{foldername}space {imagename}    { to attach the addtional volume to the container }
+
+Docker volume rm "volumename" { to delect the volume }
+
+
+
+]
+
+docker logs {container id}  {Genrate the logs for the containers}
+
+[
+
+docker network ls
+
+sudo docker inspect container id  { To see the container Ip details }
+
+docker network inspect bridge{networkname}  { To see the network ips and containers }
+
+docker network create busy-network { To create one separate network }
+
+docker network conect busy-Network container 3 { to connect our private network }
+
+docker network discount bridge containe3  { to discount from the network }
+
+].
+
+
+Kubernets commands: 
+-------------------
+
+Minikube start { to start the minikube }
+
+Kubectl cluster-info
+
+Kubectl get node
+
+File name .yml  { to wrie folder name end with .yml } 
+
+kubectl create deployment  --image nginx my-nginx   { once script completed to execute script we use this command }
+
+Kubectl get deployment { to deploy the script }
+
+Kubectl scale deployment --replicas 4 my-nginx { to increase the pods }
+
+Kubectl create service nodeport my-nginx --tcp=80:80 { to services to view in the webpage in real time }
+
+Kubectl get service.  { to get access for the services to see the Ip and port numbers }
+
+Kubectl get pods --show-labels  { to see the pods with the names }
+
+Kubectl get pods -o wide  { to get the pod ip Address }
+
+Kubectl run frontend --image=nginx  --restart=  --labels=env=prod,team=admin,owner=sam,manager=bharathi,project=dover,app=d1 { to run pod with naming convention }
+
